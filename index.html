@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body { background-color: #f8f9fa; }
+        .container { margin-top: 20px; }
+        .video { margin: 10px 0; }
+        #progress { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Yoga App</h1>
+        <div id="goal-setting" class="mb-4">
+            <h2>Set Your Goal</h2>
+            <select id="goal" class="form-control">
+                <option value="flexibility">Flexibility</option>
+                <option value="strength">Strength</option>
+                <option value="relaxation">Relaxation</option>
+            </select>
+            <button id="set-goal" class="btn btn-primary mt-2">Set Goal</button>
+        </div>
+        <div id="video-library">
+            <h2>Yoga Videos</h2>
+            <div class="video">
+                <h5>Sun Salutation</h5>
+                <video width="320" height="240" controls>
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video">
+                <h5>Warrior Pose</h5>
+                <video width="320" height="240" controls>
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <div id="progress">
+            <h2>User Progress</h2>
+            <button id="track-progress" class="btn btn-success">Track Progress</button>
+            <div id="progress-output" class="mt-3"></div>
+        </div>
+        <div id="meditation">
+            <h2>Meditation</h2>
+            <button id="start-meditation" class="btn btn-info">Start Guided Meditation</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Handle goal setting
+            $('#set-goal').click(function() {
+                const goal = $('#goal').val();
+                alert('Your goal is set to: ' + goal);
+            });
+
+            // Track user progress
+            $('#track-progress').click(function() {
+                const progress = 'You have completed 5 yoga sessions this week!';
+                $('#progress-output').text(progress);
+            });
+
+            // Start meditation
+            $('#start-meditation').click(function() {
+                alert('Starting your guided meditation session!');
+            });
+        });
+    </script>
+</body>
+</html>
