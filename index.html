@@ -50,6 +50,13 @@
             <h2>Meditation</h2>
             <button id="start-meditation" class="btn btn-info">Start Guided Meditation</button>
         </div>
+        <div id="share">
+            <h2>Share Your Progress</h2>
+            <button id="share-facebook" class="btn btn-primary">Share on Facebook</button>
+        </div>
+        <footer class="text-center mt-4">
+            <p>Made with 💖 by gpt-4o-mini.</p>
+        </footer>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -71,7 +78,13 @@
 
             // Start meditation
             $('#start-meditation').click(function() {
-                alert('Starting your guided meditation session!');
+                alert('Starting guided meditation...');
+            });
+
+            // Share on Facebook
+            $('#share-facebook').click(function() {
+                const shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href);
+                window.open(shareUrl, '_blank');
             });
         });
     </script>
